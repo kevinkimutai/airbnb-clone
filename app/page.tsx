@@ -1,3 +1,9 @@
+import { Modal } from "@/components/Modal";
+
 export default function Home() {
-  return <div>HELAIRBNBLO </div>;
+  return (
+    <>
+      <Modal />
+    </>
+  );
 }
