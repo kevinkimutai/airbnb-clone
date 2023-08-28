@@ -10,6 +10,8 @@ import toast from "react-hot-toast";
 
 import { ClipLoader } from "react-spinners";
 
+import { signIn } from "next-auth/react";
+
 const schema = yup
   .object({
     name: yup.string().required(),
@@ -133,7 +135,12 @@ const RegisterModal = () => {
       <div className="w-full border-t-[1px] border-slate-500 mb-3" />
 
       <div className="border border-slate-500 w-full rounded-md">
-        <div className="flex justify-center items-center p-2 cursor-pointer">
+        <div
+          className="flex justify-center items-center p-2 cursor-pointer"
+          onClick={() => {
+            signIn("google");
+          }}
+        >
           <FcGoogle />
           <span className="ml-2">Signup with Google</span>
         </div>
