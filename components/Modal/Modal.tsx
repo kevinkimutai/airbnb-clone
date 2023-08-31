@@ -5,7 +5,7 @@ import { Dialog, Transition } from "@headlessui/react";
 
 import { IoIosClose } from "react-icons/io";
 
-import { RegisterModal } from ".";
+import { RegisterModal, RentModal } from ".";
 import { headerModalDetails } from "@/constants/constants";
 import LoginModal from "./LoginModal";
 
@@ -24,6 +24,9 @@ const Modal = ({ setIsOpen, isOpen, type }: PageProps) => {
 
   if (type === "login") {
     header = headerModalDetails.login;
+  }
+  if (type === "airbnb_my_house") {
+    header = headerModalDetails.airbnb_my_house;
   }
   return (
     // Use the `Transition` component at the root level
@@ -78,6 +81,7 @@ const Modal = ({ setIsOpen, isOpen, type }: PageProps) => {
 
               {type === "register" && <RegisterModal />}
               {type === "login" && <LoginModal />}
+              {type === "airbnb_my_house" && <RentModal />}
 
               {/* ... */}
             </Dialog.Panel>

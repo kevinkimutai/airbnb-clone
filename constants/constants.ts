@@ -24,6 +24,13 @@ export const headerModalDetails = {
       paragraph: "Login To Your Account!",
     },
   },
+  airbnb_my_house: {
+    title: "Airbnb Your Home",
+    salutation: {
+      header: "Welcome Back",
+      paragraph: "Finish Your Listing!",
+    },
+  },
 };
 
 export const categoryIcons: any = [

@@ -8,3 +8,14 @@ export type SafeUser = Omit<
   updatedAt: string;
   emailVerified: string | null;
 };
+
+
+export type RentStateType = {
+  category: string;
+  location: string;
+  info: {
+    guests: number;
+    rooms: number;
+    bathrooms: number;
+  };
+};

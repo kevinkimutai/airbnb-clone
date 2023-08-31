@@ -48,6 +48,15 @@ const NavMenu = ({ currentUser }: PageProps) => {
                 Wishlists
               </li>
               <hr />
+              <li
+                className="p-2 cursor-pointer hover:bg-slate-100 transition w-full  "
+                onClick={() => {
+                  setIsOpen(true);
+                  setModalType("airbnb_my_house");
+                }}
+              >
+                Airbnb My House
+              </li>
               <li className="p-2 cursor-pointer hover:bg-slate-100 transition w-full  ">
                 Manage Listings
               </li>
