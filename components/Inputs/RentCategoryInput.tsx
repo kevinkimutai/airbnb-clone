@@ -16,7 +16,7 @@ const RentCategoryInput = ({ formState, setFormState, onNext }: PageProps) => {
   return (
     <>
       <h2 className="mb-2">Which of These Best Describes Your House?</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh]overflow-y-auto ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto ">
         {/*@ts-ignore*/}
         {categoryIcons.map(({ icon: Icon, label }) => (
           <div

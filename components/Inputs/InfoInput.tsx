@@ -39,7 +39,7 @@ const InfoInput = ({ type, formState, setFormState }: PageProps) => {
   };
 
   return (
-    <div className="flex justify-between items-center mb-4">
+    <div className="flex justify-between items-center mb-8">
       <div>
         <h2 className="font-semibold">{type}</h2>
         <p className="text-slate-600 text-sm">{`How Many ${type} ${
@@ -48,16 +48,16 @@ const InfoInput = ({ type, formState, setFormState }: PageProps) => {
       </div>
       <div className="flex justify-center items-center">
         <AiOutlineMinusCircle
-          className="mr-3 text-2xl cursor-pointer"
+          className="mr-3 text-xl cursor-pointer"
           onClick={subtractState}
         />
 
-        <span className="text-3xl">
+        <span className="text-xl">
           {/*@ts-ignore*/}
           {formState.info[`${type.toLowerCase()}`]}
         </span>
         <AiOutlinePlusCircle
-          className="ml-3 text-2xl cursor-pointer"
+          className="ml-3 text-xl cursor-pointer"
           onClick={addState}
         />
       </div>

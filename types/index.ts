@@ -9,7 +9,6 @@ export type SafeUser = Omit<
   emailVerified: string | null;
 };
 
-
 export type RentStateType = {
   category: string;
   location: string;
@@ -18,4 +17,5 @@ export type RentStateType = {
     rooms: number;
     bathrooms: number;
   };
+  images: string[];
 };

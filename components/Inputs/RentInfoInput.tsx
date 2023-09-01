@@ -33,12 +33,12 @@ const RentInfoInput = ({
         formState={formState}
         setFormState={setFormState}
       />
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex justify-center items-center gap-2">
         <button
           className="border-2 border-black text-black text-center bg-white w-full py-2 rounded-md"
           onClick={() => onBack()}
         >
-          back
+          Back
         </button>
         <button
           className="bg-rose-600 text-white text-center w-full py-2 rounded-md outline-none"

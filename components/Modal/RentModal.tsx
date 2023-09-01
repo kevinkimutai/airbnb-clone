@@ -6,6 +6,7 @@ import RentCategoryInput from "../Inputs/RentCategoryInput";
 import RentMapInput from "../Inputs/RentMapInput";
 import RentInfoInput from "../Inputs/RentInfoInput";
 import { RentStateType } from "@/types";
+import RentImageUpload from "../Inputs/RentImageUpload";
 
 enum STEPS {
   CATEGORY = 0,
@@ -24,6 +25,7 @@ const defaultFormValues = {
     rooms: 1,
     bathrooms: 1,
   },
+  images: [],
 };
 
 const RentModal = () => {
@@ -78,7 +80,18 @@ const RentModal = () => {
   }
 
   if (step === STEPS.IMAGES) {
-    return <div>IMAGES</div>;
+    return (
+      <RentImageUpload
+        formState={formState}
+        setFormState={setFormState}
+        onNext={onNext}
+        onBack={onPrevious}
+      />
+    );
+  }
+
+  if (step === STEPS.DESCRIPTION) {
+    return <div>DESCRIPTION</div>;
   }
 };
 

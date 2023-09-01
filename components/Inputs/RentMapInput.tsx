@@ -119,7 +119,7 @@ const RentMapInput = ({
         </div>
       </Combobox>
       <MapBox center={selectedCountry?.latlng} />
-      <div className="flex justify-center items-center gap-4 mt-5">
+      <div className="flex justify-center items-center gap-2 mt-5">
         <button
           className="border-2 border-black text-black text-center bg-white w-full py-2 rounded-md"
           onClick={() => onBack()}

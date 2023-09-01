@@ -62,7 +62,7 @@ const Modal = ({ setIsOpen, isOpen, type }: PageProps) => {
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel
-              className={"mx-auto bg-white rounded-2xl w-[30vw] p-4 shadow-sm "}
+              className={"mx-auto bg-white rounded-2xl w-[40vw] p-4 shadow-sm "}
             >
               <div className="relative flex justify-center items-center border-b-[1px] w-full py-2 mb-4">
                 <Dialog.Title className="font-semibold">

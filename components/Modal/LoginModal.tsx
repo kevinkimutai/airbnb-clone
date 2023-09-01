@@ -32,50 +32,6 @@ const LoginModal = () => {
     resolver: yupResolver(schema),
   });
 
-  //   const loginUser = async ({ email, password }: FormData) => {
-  //     let url = "/api/register";
-
-  //     const requestOptions = {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         // You can add more headers here if needed
-  //       },
-  //       body: JSON.stringify({ name, email, password }),
-  //     };
-
-  //     setLoading(true);
-
-  //     try {
-  //       const res = await fetch(url, requestOptions);
-
-  //       if (!res.ok && res.status === 409) {
-  //         toast.error("A user exists with that email");
-  //         setLoading(false);
-  //         reset();
-  //       }
-
-  //       if (!res.ok && res.status !== 409) {
-  //         toast.error("something went wrong when signing up!");
-  //         setLoading(false);
-  //         reset();
-  //       }
-
-  //       if (res.ok && res.status === 200) {
-  //         toast.success("successfully signed up!");
-  //         setLoading(false);
-  //         reset();
-  //         //   setTimeout(() => {
-  //         //     router.push("/auth/login");
-  //         //   }, 3050);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //       toast.error("something went wrong when signing up!");
-  //       reset();
-  //     }
-  //   };
-
   const loginUser = async (data: FormData) => {
     setLoading(true);
 
