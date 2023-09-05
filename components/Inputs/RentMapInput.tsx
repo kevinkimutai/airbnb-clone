@@ -15,7 +15,7 @@ type CountrySelectValue = {
   value: string;
 };
 
-const formattedCountries = countries.map((country: any) => ({
+export const formattedCountries = countries.map((country: any) => ({
   value: country.cca2,
   label: country.name.common,
   flag: country.flag,
@@ -26,7 +26,6 @@ const formattedCountries = countries.map((country: any) => ({
 type PageProps = {
   formState: RentStateType;
   setFormState: React.Dispatch<React.SetStateAction<RentStateType>>;
-  setLocationDetails: (country: string) => void;
   onNext: () => void;
   onBack: () => void;
 };
@@ -34,17 +33,17 @@ type PageProps = {
 const RentMapInput = ({
   formState,
   setFormState,
-  setLocationDetails,
+
   onNext,
   onBack,
 }: PageProps) => {
-  const [selectedCountry, setSelectedCountry] = useState<CountrySelectValue>();
+  const [selectedCountry, setSelectedCountry] = useState<string | null>();
   const [query, setQuery] = useState("");
 
   const filteredCountries =
     query === ""
       ? formattedCountries
-      : formattedCountries.filter((country) => {
+      : formattedCountries.filter((country: CountrySelectValue) => {
           return country.label.toLowerCase().includes(query.toLowerCase());
         });
 
@@ -63,7 +62,8 @@ const RentMapInput = ({
             displayValue={(country: any) => country.label}
             onChange={(event) => setQuery(event.target.value)} // Update the search query when the input changes
             placeholder="Country Location..."
-            value={selectedCountry?.label}
+            //@ts-ignore
+            value={selectedCountry}
           />
 
           {/* Transition for displaying the options */}
@@ -118,7 +118,7 @@ const RentMapInput = ({
           </Transition>
         </div>
       </Combobox>
-      <MapBox center={selectedCountry?.latlng} />
+      <MapBox center={selectedCountry} />
       <div className="flex justify-center items-center gap-2 mt-5">
         <button
           className="border-2 border-black text-black text-center bg-white w-full py-2 rounded-md"
@@ -132,7 +132,10 @@ const RentMapInput = ({
             if (!selectedCountry) {
               return;
             } else {
-              setLocationDetails(selectedCountry.label);
+              setFormState((prev) => ({
+                ...prev,
+                location: selectedCountry,
+              }));
               onNext();
             }
           }}

@@ -11,11 +11,13 @@ export type SafeUser = Omit<
 
 export type RentStateType = {
   category: string;
-  location: string;
+  location: string | null;
   info: {
     guests: number;
     rooms: number;
     bathrooms: number;
   };
   images: string[];
+  description: { title: string; description: string };
+  price: number | null;
 };

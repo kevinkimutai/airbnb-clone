@@ -7,6 +7,8 @@ import RentMapInput from "../Inputs/RentMapInput";
 import RentInfoInput from "../Inputs/RentInfoInput";
 import { RentStateType } from "@/types";
 import RentImageUpload from "../Inputs/RentImageUpload";
+import RentDescriptionInput from "../Inputs/RentDescriptionInput";
+import RentPriceInput from "../Inputs/RentPriceInput";
 
 enum STEPS {
   CATEGORY = 0,
@@ -19,25 +21,23 @@ enum STEPS {
 
 const defaultFormValues = {
   category: "",
-  location: "",
+  location: null,
   info: {
     guests: 1,
     rooms: 1,
     bathrooms: 1,
   },
   images: [],
+  description: {
+    title: "",
+    description: "",
+  },
+  price: null,
 };
 
 const RentModal = () => {
   const [formState, setFormState] = useState<RentStateType>(defaultFormValues);
   const [step, setStep] = useState<STEPS>(STEPS.CATEGORY);
-
-  const setLocationDetails = (country: any) => {
-    setFormState((prev) => ({
-      ...prev,
-      location: country,
-    }));
-  };
 
   const onNext = () => {
     setStep((prevState) => prevState + 1);
@@ -63,7 +63,6 @@ const RentModal = () => {
         setFormState={setFormState}
         onNext={onNext}
         onBack={onPrevious}
-        setLocationDetails={setLocationDetails}
       />
     );
   }
@@ -91,7 +90,25 @@ const RentModal = () => {
   }
 
   if (step === STEPS.DESCRIPTION) {
-    return <div>DESCRIPTION</div>;
+    return (
+      <RentDescriptionInput
+        formState={formState}
+        setFormState={setFormState}
+        onNext={onNext}
+        onBack={onPrevious}
+      />
+    );
+  }
+
+  if (step === STEPS.PRICE) {
+    return (
+      <RentPriceInput
+        formState={formState}
+        setFormState={setFormState}
+        onNext={onNext}
+        onBack={onPrevious}
+      />
+    );
   }
 };
 

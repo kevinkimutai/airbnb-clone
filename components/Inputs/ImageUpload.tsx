@@ -31,7 +31,10 @@ const ImageUpload = ({ main, setFormState }: PageProps) => {
     const file = e.target.files![0];
 
     // Upload file and metadata to the object 'images/mountains.jpg'
-    const storageRef = ref(storage, "rent-images/" + file.name);
+    const storageRef = ref(
+      storage,
+      "rent-images/" + file.name + Date.now().toString()
+    );
     const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
     // Listen for state changes, errors, and completion of the upload.

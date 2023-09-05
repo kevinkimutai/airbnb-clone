@@ -1,4 +1,5 @@
 import { Categories } from "@/components/Category";
+import Listing from "@/components/Listing/Listing";
 import { Modal } from "@/components/Modal";
 import toast, { Toaster } from "react-hot-toast";
 import { BiError } from "react-icons/bi";
@@ -43,6 +44,7 @@ export default function Home() {
         }}
       />
       <Categories />
+      <Listing />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Nav";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import getCurrentUser from "@/utils/actions";
+import getCurrentUser from "@/utils/actions/getCurrentUser";
 import { SafeUser } from "@/types";
 
 const nunito = Nunito({ subsets: ["latin"] });
