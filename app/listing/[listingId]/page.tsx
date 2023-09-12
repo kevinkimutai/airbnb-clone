@@ -1,18 +1,17 @@
-import { Categories } from "@/components/Category";
-import Listing from "@/components/Listing/Listing";
-import { Modal } from "@/components/Modal";
-import { IListingsParams } from "@/utils/actions/getListing";
-import toast, { Toaster } from "react-hot-toast";
+import ImagesListing from "@/components/SpecificListing/ImagesListing";
+import ListingIdDetails from "@/components/SpecificListing/ListingIdDetails";
+import getListingById from "@/utils/actions/getListingById";
+
+import React from "react";
+import { Toaster } from "react-hot-toast";
 import { BiError } from "react-icons/bi";
 
-// app/posts/page.ts
-type Props = {
-  params: {};
-  searchParams: IListingsParams;
+type ParamsPage = {
+  listingId: string;
 };
 
-export default function Home(props: Props) {
-  const searchParams = props.searchParams;
+const ListingId = async ({ params }: { params: ParamsPage }) => {
+  const listing = await getListingById(params);
 
   return (
     <>
@@ -52,8 +51,13 @@ export default function Home(props: Props) {
           },
         }}
       />
-      <Categories />
-      <Listing params={searchParams} />
+      <h2 className="font-bold text-4fggxl pt-16">{listing?.title}</h2>
+      <ImagesListing images={listing!.imageSrc} />
+      <ListingIdDetails listing={listing!} />
     </>
   );
-}
+};
+
+export default ListingId;
+
+

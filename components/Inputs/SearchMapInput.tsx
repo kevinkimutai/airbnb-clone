@@ -5,7 +5,7 @@ import React, { useState, Fragment } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import countries from "world-countries";
 import MapBox from "../Map/MapBox";
-import { RentStateType } from "@/types";
+import { SearchStateType } from "@/types";
 
 type CountrySelectValue = {
   flag: string;
@@ -24,13 +24,13 @@ export const formattedCountries = countries.map((country: any) => ({
 }));
 
 type PageProps = {
-  formState: RentStateType;
-  setFormState: React.Dispatch<React.SetStateAction<RentStateType>>;
+  formState: SearchStateType;
+  setFormState: React.Dispatch<React.SetStateAction<SearchStateType>>;
   onNext: () => void;
   onBack: () => void;
 };
 
-const RentMapInput = ({
+const SearchMapInput = ({
   formState,
   setFormState,
 
@@ -121,7 +121,7 @@ const RentMapInput = ({
       <MapBox center={selectedCountry} />
       <div className="flex justify-center items-center gap-2 mt-5">
         <button
-          className="border border-black text-black text-center bg-white w-full py-2 rounded-md"
+          className="border border-black  text-black text-center bg-white w-full py-2 rounded-md"
           onClick={() => onBack()}
         >
           Back
@@ -147,4 +147,4 @@ const RentMapInput = ({
   );
 };
 
-export default RentMapInput;
+export default SearchMapInput;

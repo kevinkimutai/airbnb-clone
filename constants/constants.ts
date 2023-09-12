@@ -6,8 +6,9 @@ import {
   MdOutlinePool,
   MdOutlineCabin,
 } from "react-icons/md";
-import { GiFarmTractor } from "react-icons/gi";
+import { GiCampfire, GiFarmTractor } from "react-icons/gi";
 import { AiOutlinePicture } from "react-icons/ai";
+import { BsSnow } from "react-icons/bs";
 
 export const headerModalDetails = {
   register: {
@@ -26,10 +27,11 @@ export const headerModalDetails = {
   },
   airbnb_my_house: {
     title: "Airbnb Your Home",
-    salutation: {
-      header: "Welcome Back",
-      paragraph: "Finish Your Listing!",
-    },
+    salutation: null,
+  },
+  search: {
+    title: "Search Airbnb",
+    salutation: null,
   },
 };
 
@@ -69,5 +71,13 @@ export const categoryIcons: any = [
   {
     icon: MdOutlineCabin,
     label: "cabin",
+  },
+  {
+    icon: BsSnow,
+    label: "arctic",
+  },
+  {
+    icon: GiCampfire,
+    label: "camping",
   },
 ];

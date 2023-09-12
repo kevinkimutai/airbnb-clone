@@ -1,4 +1,4 @@
-import { User } from "@prisma/client";
+import { Listing, User } from "@prisma/client";
 
 export type SafeUser = Omit<
   User,
@@ -7,6 +7,9 @@ export type SafeUser = Omit<
   createdAt: string;
   updatedAt: string;
   emailVerified: string | null;
+};
+export type SafeListing = Omit<Listing, "createdAt"> & {
+  createdAt: string;
 };
 
 export type RentStateType = {
@@ -19,5 +22,16 @@ export type RentStateType = {
   };
   images: string[];
   description: { title: string; description: string };
+  price: number | null;
+};
+
+export type SearchStateType = {
+  location: string | null;
+  info: {
+    guests: number;
+    rooms: number;
+    bathrooms: number;
+  };
+  dates: { startDate: Date; endDate: Date | null };
   price: number | null;
 };

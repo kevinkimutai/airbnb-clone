@@ -1,15 +1,16 @@
 import React from "react";
-import InfoInput from "./InputInfo";
-import { RentStateType } from "@/types";
+
+import { SearchStateType } from "@/types";
+import SearchInfo from "./SearchInfo";
 
 type PageProps = {
-  formState: RentStateType;
-  setFormState: React.Dispatch<React.SetStateAction<RentStateType>>;
+  formState: SearchStateType;
+  setFormState: React.Dispatch<React.SetStateAction<SearchStateType>>;
   onNext: () => void;
   onBack: () => void;
 };
 
-const RentInfoInput = ({
+const SearchInfoInput = ({
   formState,
   setFormState,
   onBack,
@@ -17,18 +18,20 @@ const RentInfoInput = ({
 }: PageProps) => {
   return (
     <>
-      <h2 className="mb-6 font-semibold">Share Some Basics of your Place?</h2>
-      <InfoInput
+      <h2 className="mb-6 font-semibold">
+        Some Basics On The Type Of House Your Looking For.
+      </h2>
+      <SearchInfo
         type="Guests"
         formState={formState}
         setFormState={setFormState}
       />
-      <InfoInput
+      <SearchInfo
         type="Rooms"
         formState={formState}
         setFormState={setFormState}
       />
-      <InfoInput
+      <SearchInfo
         type="Bathrooms"
         formState={formState}
         setFormState={setFormState}
@@ -51,4 +54,4 @@ const RentInfoInput = ({
   );
 };
 
-export default RentInfoInput;
+export default SearchInfoInput;

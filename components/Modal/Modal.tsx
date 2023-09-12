@@ -8,6 +8,7 @@ import { IoIosClose } from "react-icons/io";
 import { RegisterModal, RentModal } from ".";
 import { headerModalDetails } from "@/constants/constants";
 import LoginModal from "./LoginModal";
+import SearchModal from "./SearchModal";
 
 type PageProps = {
   setIsOpen: (bool: boolean) => void;
@@ -27,6 +28,9 @@ const Modal = ({ setIsOpen, isOpen, type }: PageProps) => {
   }
   if (type === "airbnb_my_house") {
     header = headerModalDetails.airbnb_my_house;
+  }
+  if (type === "search") {
+    header = headerModalDetails.search;
   }
   return (
     // Use the `Transition` component at the root level
@@ -62,7 +66,9 @@ const Modal = ({ setIsOpen, isOpen, type }: PageProps) => {
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel
-              className={"mx-auto bg-white rounded-2xl w-[40vw] p-4 shadow-sm "}
+              className={
+                "mx-auto bg-white rounded-2xl w-3/4 sm:w-1/2 md:w-[40vw] p-4 shadow-sm "
+              }
             >
               <div className="relative flex justify-center items-center border-b-[1px] w-full py-2 mb-4">
                 <Dialog.Title className="font-semibold">
@@ -74,14 +80,19 @@ const Modal = ({ setIsOpen, isOpen, type }: PageProps) => {
                   onClick={() => setIsOpen(false)}
                 />
               </div>
-              <h2 className="font-semibold">{header?.salutation.header}</h2>
-              <p className="text-slate-500 mb-4">
-                {header?.salutation.paragraph}
-              </p>
+              {header?.salutation ? (
+                <>
+                  <h2 className="font-semibold">{header.salutation.header}</h2>
+                  <p className="text-slate-500 mb-4">
+                    {header?.salutation.paragraph}
+                  </p>
+                </>
+              ) : null}
 
               {type === "register" && <RegisterModal />}
               {type === "login" && <LoginModal />}
               {type === "airbnb_my_house" && <RentModal />}
+              {type === "search" && <SearchModal />}
 
               {/* ... */}
             </Dialog.Panel>

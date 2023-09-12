@@ -142,7 +142,7 @@ const RegisterModal = () => {
           }}
         >
           <FcGoogle />
-          <span className="ml-2">Signup with Google</span>
+          <span className="ml-2 cursor-pointer">Signup with Google</span>
         </div>
       </div>
     </>

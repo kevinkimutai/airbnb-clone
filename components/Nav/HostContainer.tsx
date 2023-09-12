@@ -18,7 +18,7 @@ const HostContainer = ({ currentUser }: PageProps) => {
   return (
     <>
       <div className="relative flex justify-center items-center">
-        <div className="mr-8 hover:bg-slate-300 transition py-2 px-4 rounded-full">
+        <div className="mr-8 hover:bg-slate-300 transition py-2 px-4 rounded-full hidden lg:block">
           Host Your Home
         </div>
         <div className="flex justify-center items-center p-1 rounded-full border border-slate-300 cursor-pointer">

@@ -10,7 +10,7 @@ const IconComponent = ({ Icon, selected }: any) => (
   <Icon
     className={`${
       selected ? "text-black" : "text-slate-800"
-    } text-2xl transition" `}
+    } text-2xl mb-2 transition" `}
   />
 );
 
@@ -49,7 +49,7 @@ const Categories = () => {
       {categoryIcons.map(({ icon: Icon, label }) => (
         <div
           key={label}
-          className="flex flex-col justify-center items-center"
+          className="flex flex-col justify-center items-center cursor-pointer"
           onClick={() => {
             queryHandler(label);
           }}
@@ -60,7 +60,7 @@ const Categories = () => {
               label === selectedCategory
                 ? "text-black border-b-2 border-b-black"
                 : "text-slate-800"
-            } text-md whitespace-nowrap pb-2 capitalize transition-all`}
+            } text-sm whitespace-nowrap pb-2 capitalize transition-all`}
           >
             {label}
           </p>

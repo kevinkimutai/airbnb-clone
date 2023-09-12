@@ -14,7 +14,7 @@ const NavMenu = ({ currentUser }: PageProps) => {
 
   return (
     <>
-      <div className="absolute flex justify-center items-center right-1 top-12 w-48 transition rounded-2xl bg-white shadow-md hover:shadow-lg">
+      <div className="absolute flex justify-center items-center right-1 top-12 w-48 transition rounded-2xl bg-white shadow-md hover:shadow-lg z-50">
         <ul className="w-full ">
           {!currentUser && (
             <>
@@ -41,9 +41,6 @@ const NavMenu = ({ currentUser }: PageProps) => {
 
           {currentUser && (
             <>
-              <li className="p-2 cursor-pointer hover:bg-slate-100 transition w-full   font-bold">
-                Trips
-              </li>
               <li className="p-2 cursor-pointer hover:bg-slate-100 transition w-full   font-bold">
                 Wishlists
               </li>

@@ -1,16 +1,16 @@
 "use client";
 
-import { RentStateType } from "@/types";
+import { RentStateType, SearchStateType } from "@/types";
 import React, { useState } from "react";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 
 type PageProps = {
   type: string;
-  formState: RentStateType;
-  setFormState: React.Dispatch<React.SetStateAction<RentStateType>>;
+  formState: SearchStateType;
+  setFormState: React.Dispatch<React.SetStateAction<SearchStateType>>;
 };
 
-const InfoInput = ({ type, formState, setFormState }: PageProps) => {
+const SearchInfo = ({ type, formState, setFormState }: PageProps) => {
   const subtractState = () => {
     //@ts-ignore
     if (formState.info[`${type}`] === 1) {
@@ -65,4 +65,4 @@ const InfoInput = ({ type, formState, setFormState }: PageProps) => {
   );
 };
 
-export default InfoInput;
+export default SearchInfo;

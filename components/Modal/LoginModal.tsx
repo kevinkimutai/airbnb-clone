@@ -89,7 +89,10 @@ const LoginModal = () => {
       </form>
       <div className="w-full border-t-[1px] border-slate-500 mb-3" />
 
-      <div className="border border-slate-500 w-full rounded-md">
+      <div
+        className="border border-slate-500 w-full rounded-md"
+        onClick={() => signIn("google")}
+      >
         <div className="flex justify-center items-center p-2 cursor-pointer">
           <FcGoogle />
           <span className="ml-2">Login with Google</span>

@@ -1,0 +1,25 @@
+const path = require('path');
+
+module.exports = {
+  // ... other Webpack configuration options ...
+
+  module: {
+    rules: [
+      // ... other rules ...
+
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              // Any additional options you may need
+            },
+          },
+        ],
+      },
+    ],
+  },
+
+  // ... other Webpack configuration options ...
+};

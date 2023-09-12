@@ -20,7 +20,7 @@ const RentPriceInput = ({
   onNext,
 }: PageProps) => {
   const router = useRouter();
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const submitListing = async () => {
     setLoading(true);
@@ -66,13 +66,13 @@ const RentPriceInput = ({
       ) : (
         <div className="flex justify-center items-center mt-5 w-full gap-2">
           <button
-            className="border-2 border-black text-black text-center bg-white w-full py-2 rounded-md"
+            className="border border-black text-black text-center bg-white w-full py-2 rounded-md"
             onClick={() => onBack()}
           >
             Back
           </button>
           <button
-            className="bg-rose-600 text-white text-center w-full py-2 rounded-md outline-none"
+            className="border border-rose-500 bg-rose-600 text-white text-center w-full py-2 rounded-md outline-none"
             onClick={() => {
               if (formState.price === 0) {
                 return;

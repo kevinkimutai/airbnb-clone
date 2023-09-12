@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <div className="h-8 w-fit">
+    <div className="h-8 w-fit hidden md:block">
       <Link href={"/"}>
         <Image
           src={Img}

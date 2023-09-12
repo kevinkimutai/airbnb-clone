@@ -1,6 +1,7 @@
 "use client";
 
 import react, { useState } from "react";
+//@ts-ignore
 import L from "leaflet";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 

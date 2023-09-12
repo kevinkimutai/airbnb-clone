@@ -100,8 +100,8 @@ const ImageUpload = ({ main, setFormState }: PageProps) => {
   return (
     <div
       className={`w-full ${
-        main ? "min-h-[7rem]" : "h-fit"
-      } justify-center items-center p-4 border border-slate-600 rounded-md mb-2`}
+        main ? "min-h-[10rem]" : "h-fit"
+      } justify-center items-center p-4 border border-slate-600 rounded-md mb-2 overflow-hidden`}
     >
       {loading ? (
         <div className="flex justify-center items-center">
@@ -123,10 +123,10 @@ const ImageUpload = ({ main, setFormState }: PageProps) => {
       ) : (
         <Image
           src={uploadURL}
-          width={50}
-          height={50}
+          width={250}
+          height={250}
           alt="your house"
-          className="h-full object-contain mx-auto"
+          className="w-full object-fill content-center"
         />
       )}
     </div>

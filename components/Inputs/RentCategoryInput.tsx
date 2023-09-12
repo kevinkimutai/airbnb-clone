@@ -22,8 +22,10 @@ const RentCategoryInput = ({ formState, setFormState, onNext }: PageProps) => {
           <div
             key={label}
             className={`${
-              formState.category === label ? "border-2 font-semibold" : ""
-            } w-full rounded-md p-2 border border-slate-500 transition`}
+              formState.category === label
+                ? "border-2 border-black font-semibold"
+                : "border border-slate-500"
+            } w-full rounded-md p-2  transition`}
             onClick={() =>
               setFormState((prevState: any) => ({
                 ...prevState,
