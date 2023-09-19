@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   // ... other Webpack configuration options ...
 
@@ -9,14 +7,7 @@ module.exports = {
 
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {
-              // Any additional options you may need
-            },
-          },
-        ],
+        use: "null-loader",
       },
     ],
   },

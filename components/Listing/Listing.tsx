@@ -1,13 +1,10 @@
-import { IListingsParams, getListing } from "@/utils/actions/getListing";
 import React from "react";
 import ListingCard from "./ListingCard";
 import PaginationBtns from "../PaginationBtn/PaginationBtns";
 
-type Props = { params: IListingsParams };
+type Props = { listings: any };
 
-const Listing = async ({ params }: Props) => {
-  const listings: any = await getListing(params);
-
+const Listing = async ({ listings }: Props) => {
   if (listings.length === 0) {
     //<EmptyListing />;
     return (

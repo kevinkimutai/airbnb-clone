@@ -16,7 +16,11 @@ type PageProps = {
   };
 };
 
-const IconComponent = ({ Icon }: any) => <Icon className="mr-12 text-lg" />;
+const IconComponent = ({ Icon }: any) => {
+  if (typeof window !== "undefined") {
+    return <Icon className="mr-12 text-lg" />;
+  }
+};
 
 const ListingIdDetails = async ({ listing }: PageProps) => {
   let matchedCategory = categoryIcons.find(
